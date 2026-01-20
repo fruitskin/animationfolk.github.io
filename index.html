@@ -202,18 +202,74 @@
 
         <!-- (Open Roles & Detail pages remain identical to previous versions) -->
         <section id="open-roles" class="page-section w-full">
-            <button onclick="showPage('team')" class="text-slate-400 font-bold mb-8 flex items-center space-x-2 hover:text-purple-500 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg><span>Back to Team</span></button>
-            <h1 class="text-6xl font-black mb-12 tracking-tight">
-                <span class="hero-logo">Open Roles</span>
-            </h1>
-            <div class="space-y-4 max-w-4xl">
-                <div onclick="showPage('role-concept')" class="glass-card p-8 flex justify-between items-center cursor-pointer group">
-                    <div><span class="role-tag">Creative</span><h3 class="text-2xl font-bold text-slate-800 mt-2 tracking-tight">Concept & Character Artist</h3></div>
-                    <svg class="w-8 h-8 text-purple-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                </div>
-                <!-- Other roles omitted for space, pattern is identical -->
-            </div>
+          <!-- Inside <section id="open-roles"> -->
+<div class="space-y-4 max-w-4xl">
+    <!-- Role 1 -->
+    <div onclick="showPage('role-concept')" class="glass-card p-8 flex justify-between items-center cursor-pointer group">
+        <div><span class="role-tag">Creative</span><h3 class="text-2xl font-bold text-slate-800 mt-2 tracking-tight">Concept & Character Artist</h3></div>
+        <svg class="w-8 h-8 text-purple-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </div>
+    <!-- Role 2 -->
+    <div onclick="showPage('role-animator')" class="glass-card p-8 flex justify-between items-center cursor-pointer group">
+        <div><span class="role-tag">Production</span><h3 class="text-2xl font-bold text-slate-800 mt-2 tracking-tight">Animator (3D/Game Focus)</h3></div>
+        <svg class="w-8 h-8 text-purple-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </div>
+    <!-- Role 3 -->
+    <div onclick="showPage('role-social')" class="glass-card p-8 flex justify-between items-center cursor-pointer group">
+        <div><span class="role-tag">Marketing</span><h3 class="text-2xl font-bold text-slate-800 mt-2 tracking-tight">Social Media Executive</h3></div>
+        <svg class="w-8 h-8 text-purple-400 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </div>
+</div>
         </section>
+
+        
+<!-- ROLE DETAIL: CONCEPT ARTIST -->
+<section id="role-concept" class="page-section">
+    <button onclick="showPage('open-roles')" class="text-slate-400 font-bold mb-8 flex items-center space-x-2 hover:text-purple-500 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg><span>All Roles</span></button>
+    <h1 class="text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
+        <span class="hero-logo">Concept & Character Artist</span>
+    </h1>
+    <div class="grid md:grid-cols-2 gap-12 mt-12 mb-16 font-medium text-slate-600 leading-relaxed max-w-5xl">
+        <div><h3 class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-4">What we are looking for</h3><p>A visionary artist defining the visual soul of projects through anatomy, color theory, and digital painting.</p></div>
+        <div><h3 class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-4">Key Responsibilities</h3><ul class="space-y-3 list-disc pl-5"><li>Translate scripts into detailed character concept sheets.</li><li>Create mood paintings and environment sketches.</li><li>Collaborate with 3D modelers to ensure design feasibility.</li></ul></div>
+    </div>
+    <div class="flex flex-wrap items-center gap-4 border-t pt-12">
+        <a href="mailto:careers@animationfolk.com?subject=Application: Concept Artist" class="btn-primary">Apply Now</a>
+        <button onclick="copyEmail(this)" class="btn-secondary"><span>Copy Email Address</span></button>
+    </div>
+</section>
+
+<!-- ROLE DETAIL: ANIMATOR -->
+<section id="role-animator" class="page-section">
+    <button onclick="showPage('open-roles')" class="text-slate-400 font-bold mb-8 flex items-center space-x-2 hover:text-purple-500 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg><span>All Roles</span></button>
+    <h1 class="text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
+        <span class="hero-logo">Animator (3D/Game Focus)</span>
+    </h1>
+    <div class="grid md:grid-cols-2 gap-12 mt-12 mb-16 font-medium text-slate-600 leading-relaxed max-w-5xl">
+        <div><h3 class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-4">What we are looking for</h3><p>A technician of motion who understands the 12 principles. Proficient in Blender/Maya and real-time engines like Unity/Unreal.</p></div>
+        <div><h3 class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-4">Key Responsibilities</h3><ul class="space-y-3 list-disc pl-5"><li>Create high-quality keyframe character animations.</li><li>Implement and test animations within game engines.</li><li>Character lip-sync and expressive facial acting.</li></ul></div>
+    </div>
+    <div class="flex flex-wrap items-center gap-4 border-t pt-12">
+        <a href="mailto:careers@animationfolk.com?subject=Application: Animator" class="btn-primary">Apply Now</a>
+        <button onclick="copyEmail(this)" class="btn-secondary"><span>Copy Email Address</span></button>
+    </div>
+</section>
+
+<!-- ROLE DETAIL: SOCIAL MEDIA -->
+<section id="role-social" class="page-section">
+    <button onclick="showPage('open-roles')" class="text-slate-400 font-bold mb-8 flex items-center space-x-2 hover:text-purple-500 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg><span>All Roles</span></button>
+    <h1 class="text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
+        <span class="hero-logo">Social Media Executive</span>
+    </h1>
+    <div class="grid md:grid-cols-2 gap-12 mt-12 mb-16 font-medium text-slate-600 leading-relaxed max-w-5xl">
+        <div><h3 class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-4">What we are looking for</h3><p>A witty communicator who lives on TikTok/X. You know how to build a community and turn workflows into viral content.</p></div>
+        <div><h3 class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-4">Key Responsibilities</h3><ul class="space-y-3 list-disc pl-5"><li>Develop and execute a Web 3.0 content strategy.</li><li>Create "Behind the Scenes" content for YouTube and TikTok.</li><li>Manage community engagement across all social platforms.</li></ul></div>
+    </div>
+    <div class="flex flex-wrap items-center gap-4 border-t pt-12">
+        <a href="mailto:careers@animationfolk.com?subject=Application: Social Media Executive" class="btn-primary">Apply Now</a>
+        <button onclick="copyEmail(this)" class="btn-secondary"><span>Copy Email Address</span></button>
+    </div>
+</section>
 
     </main>
 
