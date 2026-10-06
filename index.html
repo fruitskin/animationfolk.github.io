@@ -19,6 +19,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&family=Gochi+Hand&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; color: #1E293B; overflow-x: hidden; }
         
@@ -175,6 +176,95 @@
             filter: grayscale(0%);
             opacity: 1;
         }
+
+        /* Noah hanging banner (Noah the Toddler branding) */
+        .noah-hang {
+            position: absolute;
+            top: 100%;
+            right: 150px;
+            z-index: 40;
+            display: block;
+            text-decoration: none;
+            transform-origin: top center;
+            animation: noah-swing 4s ease-in-out infinite;
+        }
+        .noah-hang:hover { animation-play-state: paused; }
+        .noah-strings {
+            position: relative;
+            height: 22px;
+        }
+        .noah-strings::before, .noah-strings::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #171515;
+        }
+        .noah-strings::before { left: 28px; }
+        .noah-strings::after { right: 28px; }
+        .noah-sign {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 230px;
+            padding: 8px 12px 8px 8px;
+            background: #f6a6b8;
+            border: 2px solid #171515;
+            box-shadow: 4px 4px 0 0 #171515;
+            color: #171515;
+            transition: transform .15s ease, box-shadow .15s ease;
+        }
+        .noah-hang:hover .noah-sign {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 0 #171515;
+        }
+        .noah-sign img {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+            object-fit: contain;
+            background: #fffaf2;
+            border: 2px solid #171515;
+        }
+        .noah-kicker {
+            font-family: "Gochi Hand", cursive;
+            font-size: 12px;
+            line-height: 1.15;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+        .noah-title {
+            font-family: "Lacquer", cursive;
+            font-size: 22px;
+            line-height: 1;
+            text-transform: lowercase;
+            margin-top: 2px;
+        }
+        .noah-cta {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 1px 6px;
+            background: #f6c84e;
+            border: 2px solid #171515;
+            font-family: "Gochi Hand", cursive;
+            font-size: 11px;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+        @keyframes noah-swing {
+            0%, 100% { transform: rotate(-2.5deg); }
+            50% { transform: rotate(2.5deg); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .noah-hang { animation: none; }
+        }
+        @media (max-width: 767px) {
+            .noah-hang { right: 12px; transform-origin: top right; }
+            .noah-sign { width: 190px; gap: 8px; }
+            .noah-sign img { width: 40px; height: 40px; }
+            .noah-title { font-size: 18px; }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -183,7 +273,7 @@
 
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-8 md:pr-32 h-20 flex justify-between items-center">
+        <div class="relative max-w-7xl mx-auto px-8 md:pr-32 h-20 flex justify-between items-center">
             <div class="text-2xl cursor-pointer" onclick="showPage('home')">
                 <span class="logo-text">Animation Folk</span>
             </div>
@@ -193,6 +283,19 @@
                 <span onclick="showPage('about')" id="nav-about" class="nav-link">About</span>
                 <span onclick="showPage('team')" id="nav-team" class="nav-link">Team</span>
             </div>
+
+            <!-- Hanging banner: Noah the Toddler -->
+            <a href="https://www.noahtoddler.com/" target="_blank" rel="noopener" class="noah-hang" aria-label="Check out our current IP project: Noah the Toddler">
+                <div class="noah-strings"></div>
+                <div class="noah-sign">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/noah_sitting-gsXkdgTE2zwn8JUtN3HUMLA2bcMnFl.png" alt="Noah">
+                    <div>
+                        <div class="noah-kicker">Check out our current IP project</div>
+                        <div class="noah-title">noah the toddler</div>
+                        <span class="noah-cta">Meet Noah &#8599;</span>
+                    </div>
+                </div>
+            </a>
         </div>
     </nav>
 
@@ -204,7 +307,7 @@
                 <span class="hero-logo">Animation</span><br>
                 <span class="hero-logo" style="background: linear-gradient(to right, #60A5FA, #C084FC); -webkit-background-clip: text;">Folk</span>
             </h1>
-            <h2 class="text-3xl font-bold text-slate-800 mb-2 tracking-tight">Feature 3D & Game Animation for the new wave</h2>
+            <h2 class="text-3xl font-bold text-slate-800 mb-2 tracking-tight">Animation for the new wave</h2>
             <p class="text-slate-500 font-medium text-lg mb-12">Crafting something beautiful</p>
             <div class="flex justify-center space-x-2 mb-12">
                 <div class="w-3 h-3 rounded-full bg-purple-200"></div>
